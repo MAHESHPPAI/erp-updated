@@ -378,7 +378,8 @@ const AuthenticatedApp = () => {
         } />
 
         {/* Root redirect - Always go to login first */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/landing" replace />} />
+
 
         {/* 404 page */}
         <Route path="*" element={<NotFound />} />

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./GooeyNav.css";
 
 interface GooeyNavItem {
@@ -27,6 +28,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0,
 }) => {
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const mainNavRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
@@ -115,11 +117,31 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     e: React.MouseEvent<HTMLAnchorElement>,
     itemLabel: string
   ) => {
-    const globalIndex = items.findIndex(item => item.label === itemLabel);
-
-    if (!isMainNavItem(itemLabel)) return;
+    const item = items.find(i => i.label === itemLabel);
+    const globalIndex = items.findIndex(i => i.label === itemLabel);
 
     e.preventDefault();
+
+    // Handle route navigation for Login and Get Started
+    if (itemLabel === "Login") {
+      navigate('/login');
+      return;
+    }
+    if (itemLabel === "Get Started") {
+      navigate('/register');
+      return;
+    }
+
+    // Scroll to section if href starts with #
+    if (item?.href.startsWith('#')) {
+      const sectionId = item.href.substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    if (!isMainNavItem(itemLabel)) return;
 
     if (activeIndex === globalIndex) return;
 

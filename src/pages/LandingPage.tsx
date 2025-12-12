@@ -28,6 +28,7 @@ import {
   UserCog,
   AlertTriangle,
   ClipboardCheck,
+  HeartHandshake,
   type LucideIcon
 } from 'lucide-react';
 
@@ -95,6 +96,16 @@ const LandingPage: React.FC = () => {
         "Firebase authentication with secure CRUD operations",
         "Enterprise-grade data protection"
       ]
+    },
+    {
+      title: "Customer Trust & Support",
+      icon: HeartHandshake,
+      features: [
+        "24/7 dedicated customer support team",
+        "99.9% uptime guarantee with data backups",
+        "GDPR & SOC 2 compliance for data privacy",
+        "Transparent pricing with no hidden fees"
+      ]
     }
   ];
 
@@ -130,7 +141,7 @@ const LandingPage: React.FC = () => {
   ];
 
   return (
-    <div style={{ background: 'black', minHeight: '100vh', width: '100vw', overflowX: 'hidden' }}>
+    <div style={{ background: 'black', minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
       <div>
         <GooeyNav
           items={navItems}
