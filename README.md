@@ -1,6 +1,6 @@
-# Invoice & Inventory Management System
+# Enterprise Resource Planning Software
 
-A comprehensive, cloud-based business management platform built with modern web technologies. Manage invoices, inventory, purchases, clients, and suppliers with real-time data synchronization and multi-currency support.
+A comprehensive business management platform built with modern web technologies. Manage invoices, inventory, purchases, clients, and suppliers with real-time data synchronization and multi-currency support.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
